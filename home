@@ -1,0 +1,208 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--Basic structure of the menu-->
+<div>
+            <button class="collapsible" type="button">Pending approval</button>
+            <div class="content" id="pending">
+                        <button class="collapsible smaller" type="button">Pending approval to onboard</button>
+                        <div class="internalcontent">
+                                      <div id="wp-onboard">onboard</div>
+                        </div>
+            <button class="collapsible smaller" type="button">Pending approval to go live</button>
+                        <div class="internalcontent">
+                                      <div id="wp-golive">go live</div>
+                        </div>
+            <button class="collapsible smaller" type="button">Pending approval to close</button>
+                        <div class="internalcontent">
+                                      <div id="wp-close">close</div>
+                        </div>
+            </div>
+</div>
+<br />
+ <div>
+            <button class="collapsible" type="button">Escalation</button>
+            <div class="content" id="escalation">
+                        <button class="collapsible smaller" type="button">DG</button>
+                        <div class="internalcontent">
+                                      <div id="wp-directors">dgdgdgdg</div>
+                        </div>
+            <button class="collapsible smaller" type="button">Director</button>
+                        <div class="internalcontent">
+                                      <div id="wp-managers">Directors</div>
+                        </div>
+            <button class="collapsible smaller" type="button">Manager</button>
+                        <div class="internalcontent">
+                                      <div id="wp-other">Manage</div>
+                        </div>
+            </div>
+</div>
+<br />
+<div>
+            <button class="collapsible" type="button">Red</button>
+            <div class="content" id="red">
+                        <button class="collapsible smaller" type="button">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-red-sscled">SSC Led</div>
+                        </div>
+            <button class="collapsible smaller" type="button">Client Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-red-client">Client led</div>
+                        </div>
+             <button class="collapsible smaller" type="button">Internal</button>
+                        <div class="internalcontent">
+                                      <div id="wp-red-other">internal</div>
+                        </div>
+            <button class="collapsible smaller" type="button">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-red-other">Other</div>
+                        </div>
+            </div>
+</div>
+ <br />
+<div>
+            <button class="collapsible" type="button">Yellow</button>
+            <div class="content" id="yellow">
+                        <button class="collapsible smaller" type="button">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-red-sscled">SSC Led</div>
+                        </div>
+            <button class="collapsible smaller" type="button">Client Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-red-client">Client led</div>
+                        </div>
+             <button class="collapsible smaller" type="button">Internal</button>
+                        <div class="internalcontent">
+                                      <div id="wp-red-other">internal</div>
+                        </div>
+            <button class="collapsible smaller" type="button">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-red-other">Other</div>
+                        </div>
+            </div>
+</div>          
+<style>
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+              background-color: #eee;
+              color: #444;
+              cursor: pointer;
+              padding: 18px;
+              width: 100%;
+              text-align: left;
+              outline: none;
+              font-size: 18px;
+              border: none;
+}
+
+.smaller {
+           padding: 13px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+ .active, .collapsible:hover {
+             background-color: #8e2b40;
+             color: white;
+             font-size: 18px;
+             border: 1px solid black;
+            font-weight: bold;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+              display: none;
+              overflow: hidden;
+              background-color: #f1f1f1;;
+              margin-left: 18px;
+}
+/*Content that is not clickable, real data about list*/
+.internalcontent {
+              display: none;
+              overflow: hidden;
+              background-color: #fff8b0;
+              margin-left: 2%;
+              padding: 14px;
+}
+
+</style>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+ for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                            this.classList.toggle("active");
+                            var content = this.nextElementSibling;
+                            if (content.style.display === "block") {
+                                          content.style.display = "none";
+                            } else {
+                                          content.style.display = "block";
+                            }
+              });
+}
+</script>
+<script>
+    $(document).ready(function() {
+        getList(
+            function(array) {
+	      var conditions = ["pending approval to on-board", 
+					"pending approval to go live", 
+					"pending approval to close",
+					"yellow",
+					 "red"];
+              var pending = [];
+	      var pendingOnboard = [];
+              var pendingLive = [];
+              var pendingClose = [];
+              var yellowArray = [];
+              var redArray = [];
+              var escalation = [];
+              for(var i = 0 ; i < array.length; i++){
+		var status = array[i].Overall_x0020_Status.toLowerCase();
+		if(conditions[0].localeCompare(status) == 0)
+			pendingOnboard.push(generateWorkPackage(array[i]));
+		else if (conditions[1].localeCompare(status) == 0)
+			pendingLive.push(generateWorkPackage(array[i]));
+		else if (conditions[2].localeCompare(status) == 0)
+			pendingClose.push(generateWorkPackage(array[i]));
+		else if (conditions[3].localeCompare(status) == 0)
+			yellowArray.push(generateWorkPackage(array[i]));
+		else if (conditions[4].localeCompare(status) == 0)
+			redArray.push(generateWorkPackage(array[i]));
+		var escalationStatus = array[i].Escalation_x0020_To
+		if(escalationStatus !== null) {
+			escalationStatus = escalationStatus.toLowerCase()			
+			if(("none").localeCompare(escalationStatus))
+				escalation.push(generateWorkPackage(array[i]));
+			}
+            }
+	   pending.push(pendingOnboard, pendingLive, pendingClose);
+	   escalation = splitEscalation(escalation);
+	   yellowArray = splitLedType(yellowArray);
+	   redArray = splitLedType(redArray)	
+          }
+        )
+    });
+
+    function getList(callback) {
+        var url = "https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/_api/Web/Lists(guid'06552974-e76b-464f-8636-7acae451810d')/Items";
+        $.ajax({
+            url: url,
+            method: 'GET',
+            beforeSend: function(XMLHttpRequest) {
+                XMLHttpRequest.setRequestHeader('Accept', 'application/json; odata=verbose');
+            },
+            success: function(data) {
+                callback(data.d.results);
+            }
+        });
+    }
+
+   function generateWorkPackage(array) {
+               var workPackage = {};
+               workPackage.name = array.Work_x0020_Package_x0020_Name;
+               workPackage.status = array.Overall_x0020_Status;
+               workPackage.Escalation = array.Escalation_x0020_To;
+               workPackage.ID = array.ID;
+               workPackage.Type = array.WorkPackage_x0020_Type;
+               workPackage.Notes = array.Overall_x0020_Work_x0020_Package;
+               return workPackage;
+}
+</script>
