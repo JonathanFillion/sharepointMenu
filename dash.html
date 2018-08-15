@@ -1,0 +1,487 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--Basic structure of the menu-->
+<div>
+            <button class="collapsible" type="button" id="pending-main" data-status="unlocked">Pending approval</button>
+            <div class="content" id="pending">
+                        <button class="inner-collapsible smaller" type="button" id="onboard-pending" data-status="unlocked">Pending approval to onboard</button>
+                        <div class="internalcontent">
+                                      <div id="wp-onboard"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="live-pending" data-status="unlocked">Pending approval to go live</button>
+                        <div class="internalcontent">
+                                      <div id="wp-golive"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="close-pending" data-status="unlocked">Pending approval to close</button>
+                        <div class="internalcontent">
+                                      <div id="wp-close"></div>
+                        </div>
+            </div>
+</div>
+<br />
+ <div>
+            <button class="collapsible" type="button" id="escalation-button" data-status="unlocked">Escalation</button>
+            <div class="content" id="escalation"></div>
+</div>
+<br />
+<div>
+            <button class="collapsible" type="button" id="red-main" data-status="unlocked">Red</button>
+            <div class="content" id="red">
+                        <button class="inner-collapsible smaller" type="button" id="red-ssc" data-status="unlocked">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-red-sscled"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="red-cust" data-status="unlocked">Client Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-red-client"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="red-other" data-status="unlocked">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-red-other"></div>
+                        </div>
+            </div>
+</div>
+ <br />
+<div>
+            <button class="collapsible" type="button" id="yellow-main" data-status="unlocked">Yellow</button>
+            <div class="content" id="yellow">
+                        <button class="inner-collapsible smaller" type="button" id="yellow-ssc" data-status="unlocked">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-yellow-sscled"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="yellow-cust" data-status="unlocked">Client Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-yellow-client"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="yellow-other" data-status="unlocked">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-yellow-other"></div>
+                        </div>
+            </div>
+</div>          
+<style>
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+		background-color: #eee;
+		color: #444;
+		cursor: pointer;
+		padding: 14px;
+		width: 100%;
+		text-align: left;
+		outline: none;
+		font-size: 18px;
+		border: none;
+}
+.inner-collapsible {
+		background-color: #eee;
+		color: #444;
+		cursor: pointer;
+		padding: 1px;
+		width: 99%;
+		text-align: left;
+		outline: none;
+		font-size: 18px;
+		border: none;
+}
+.collapsible:hover:not(.active) {
+		background-color: #c4c8ce;
+}
+.inner-collapsible:hover:not(.inner-active) {
+		background-color: #c4c8ce;
+}
+.active:hover {
+		background-color: #8e2b40;
+		color: white;
+		font-size: 18px;
+		border: 1px solid black;
+		font-weight: bold;
+}
+.smaller {
+		padding: 13px;
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active {
+		background-color: #8e2b40;
+		color: white;
+		font-size: 18px;
+		border: 1px solid black;
+		font-weight: bold;
+}
+.inner-active:hover {
+		background-color: #c4c8ce;
+		border: 1px solid black;
+		font-weight: bold;
+}
+
+.inner-active {
+		background-color: #c4c8ce;
+		border: 1px solid black;
+		font-weight: bold;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+		display: none;
+		overflow: hidden;
+		margin: 15px;
+		margin-top: 15px;
+}
+/*Content that is not clickable, real data about list*/
+.internalcontent {
+		display: none;
+		overflow: hidden;
+	}
+
+.row {
+		padding-top:30px;
+		padding-right:10px;
+		padding-bottom:10px;
+		padding-left:10px;
+		display:flex;
+		flex-wrap:nowrap;
+		justify-content:flex-start;
+		align-items:stretch;
+		vertical-align: middle;
+		line-height: 30px; 
+	}
+.cell 	{
+		margin: 5px;
+		background-color : white;
+		min-height:35px;
+		flex-grow:1;
+		flex-basis:33%;
+		border: 1px solid;
+	}
+:nth-of-type(2n).cell {}
+
+.global {
+		background-color: #e3e8ef;
+		padding-top: 15px;
+	 	box-sizing: border-box;
+    		border: groove  5px;
+		margin: 20px;
+		margin-top: 30px;	
+	}
+.global-empty {
+		box-sizing: border-box;
+		margin: 20px;
+		}
+
+.flex35 	{
+		flex-basis:35%;
+		border-right: 1px solid;
+		}
+
+.flex65 	{
+		flex-basis:65%;
+		border-left: 1px solid;
+		}
+
+.header 	{
+		margin-top:-31px;
+		font-size: 20px;
+		font-weight: bold;
+		margin-left: 3px;
+		}
+
+.text		{
+		margin-top : 2px;
+		font-size: 15px;
+		margin-left: 10px;
+		}
+
+.iconzone {
+		 overflow: auto;
+		}
+
+.infoicon {
+		width: 33px;
+		heigth: auto;
+		float: right;
+		margin-right : 13px;
+		}
+</style>
+<script>
+var setActive = function(classname, attr) {
+	var coll = document.getElementsByClassName(classname);
+	var i;
+ 	for (i = 0; i < coll.length; i++) {
+             	 coll[i].addEventListener("click", function() {
+                       	     	if($(this).data("status") == "locked")
+					return;
+				this.classList.toggle(attr);
+                      	      	var content = this.nextElementSibling;
+                         	 	if (content.style.display === "block") {
+                            	        	content.style.display = "none";
+                        	    	} else {
+                        	    	          content.style.display = "block";
+                	            }
+        	      });
+	}
+}
+
+setActive("collapsible","active");
+setActive("inner-collapsible", "inner-active");
+</script>
+
+<script>
+    $(document).ready(function() {
+        getList(
+        //Simple triage function, for all projects, put them in the good array
+	//Compare using localeCompare, if == 0 then they are equal.    
+	function(array) {
+		console.log(array)
+		var StatusConditions = ["pending approval to on-board", 
+					"pending approval to go live", 
+					"pending approval to close",
+					"yellow",
+					 "red"];
+		var EscalationConditions = ["dg","director","manager"];
+             	var pending = {};
+ 		var escalation = {};
+		var yellow = {};
+		var red = {};
+		var escalationDG = [];
+		var escalationDirector = [];
+		var escalationManager = [];
+	      	var pendingOnboard = [];
+              	var pendingLive = [];
+              	var pendingClose = [];
+              	var yellowArray = [];
+              	var redArray = [];
+		var arraysStatus = [pendingOnboard,pendingLive,pendingClose,yellowArray,redArray];
+		var arraysEscalation = [escalationDG, escalationDirector, escalationManager];
+                for(var i = 0 ; i < array.length; i++){
+			var status = array[i].Overall_x0020_Status.toLowerCase();
+			for(var j = 0; j < StatusConditions.length; j++) {
+				if(StatusConditions[j].localeCompare(status) == 0) {
+					arraysStatus[j].push(generateWorkPackage(array[i]));
+					break;	
+				}
+			}
+			var escalationStatus = array[i].Escalation_x0020_To
+			if(escalationStatus !== null) {
+				escalationStatus = escalationStatus.toLowerCase()			
+				for(var j = 0 ; j < EscalationConditions.length; j++) {
+					if(EscalationConditions[j].localeCompare(escalationStatus) == 0) {
+						arraysEscalation[j].push(generateWorkPackage(array[i]));
+						break;
+					}
+				}
+			}
+            	}
+
+	pending = {"pending-onboard" : pendingOnboard, "pending-golive" : pendingLive, "pending-close" : pendingClose};
+	escalation = {"escalation-dg" : escalationDG};
+	yellow = splitLedType(yellowArray);
+	red = splitLedType(redArray);
+	
+	setTotalsAndLockIfEmpty(pending["pending-onboard"].length + pending["pending-golive"].length + pending["pending-close"].length, "pending-main");
+	setTotalsAndLockIfEmpty(red["ssc"].length + red["cust"].length + red["other"].length, "red-main");
+	setTotalsAndLockIfEmpty(yellow["ssc"].length + yellow["cust"].length + yellow["other"].length, "yellow-main");
+	generateHtml(pending["pending-onboard"], "wp-onboard", "onboard-pending");
+	generateHtml(pending["pending-golive"], "wp-golive", "live-pending");
+	generateHtml(pending["pending-close"], "wp-close", "close-pending");
+	generateHtml(escalation["escalationDG"],"escalation", "escalation-button");
+	generateHtml(red["ssc"],"wp-red-sscled", "red-ssc");
+	generateHtml(red["cust"],"wp-red-client", "red-cust");
+	generateHtml(red["other"],"wp-red-other", "red-other");
+	generateHtml(yellow["ssc"],"wp-yellow-sscled", "yellow-ssc");
+	generateHtml(yellow["cust"],"wp-yellow-client", "yellow-cust");
+	generateHtml(yellow["other"],"wp-yellow-other", "yellow-other");
+	})
+    });
+	var setTotalsAndLockIfEmpty = function(len, id) {
+		document.getElementById(id).innerText += "  (" + len + ")"
+		if(len == 0) {
+			$(id).data("status", "locked");
+		}
+	}
+	//gen html and append to id
+	var generateHtml = function(array, id, totalId) {
+		var target = document.getElementById(id);
+		var output = document.createElement("div");
+		if(array === undefined || array.length == 0) {
+			
+			document.getElementById(totalId).innerText += "  (0)";
+			document.querySelector("#"+totalId).setAttribute("data-status", "locked");
+			
+			return;
+		} else {
+			array = clearNull(array);
+			
+		for(var i = 0 ; i < array.length; i++) {
+				var divGlobal = div(), divFirstRow = div(), divSecondRow = div(),divThirdRow = div(),divName= div(),divGate = div(),
+				divLead = div(),divType = div(),divNotes = div(),divExec = div(),divUrl = div(), divIconZone = div(), divPrj = div();
+				
+				var divNameHeader = div(), divNameText = div(), divGateHeader = div(), divGateText =div(),divLeadHeader=div(), 		divLeadText = div(), divTypeHeader = div(), divTypeText = div(), divNotesHeader = div(), divNotesText = div(), divExecHeader = div(), divExecText= div(), divPrjHeader = div(), divPrjText = div();
+
+				var aUrl = document.createElement("a");
+				var infoImg = document.createElement("img");
+				infoImg.src = "https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/images/icons/info-sign-md.png"
+				infoImg.className = "infoicon"
+				aUrl.appendChild(infoImg)
+				divGlobal.className = "global";
+				divFirstRow.className = "row";
+				divSecondRow.className = "row";
+				divThirdRow.className = "row";
+				divName.className = "cell"
+				divGate.className = "cell";
+				divLead.className = "cell";
+				divType.className = "cell";
+				divPrj.className = "cell";
+				divExec.className = "flex35 cell";
+				divNotes.className = "flex65 cell";
+				divIconZone.className = "iconzone";
+
+				bulkSetInnerText([divNameText,divLeadText,divGateText,divTypeText,divExecText,divNotesText,divPrjText],[array[i].name, array[i].lead,array[i].gate,array[i].type,array[i].exec,array[i].notes,array[i].prj]);
+
+				bulkSetClass([divNameText, divLeadText,divGateText,divTypeText,divExecText,divNotesText, divPrjText],"text");	
+				
+				bulkSetInnerText([divNameHeader,divLeadHeader ,divGateHeader, divTypeHeader, divExecHeader,divNotesHeader, divPrjHeader], ["Work package name","SMTPS lead","PGOF gate","Work package Type","Executive summary","Overall work package notes","Project number"]);
+
+				bulkSetClass([divNameHeader, divLeadHeader,divGateHeader,divTypeHeader,divExecHeader,divNotesHeader, divPrjHeader],"header");	
+				
+				aUrl.href = array[i].url;
+				bulkAppend(divName,[divNameHeader,divNameText]);
+				bulkAppend(divLead,[divLeadHeader,divLeadText]);
+				bulkAppend(divGate,[divGateHeader,divGateText]);
+				bulkAppend(divType,[divTypeHeader,divTypeText]);
+				bulkAppend(divExec,[divExecHeader,divExecText]);
+				bulkAppend(divNotes, [divNotesHeader,divNotesText]);
+				bulkAppend(divPrj, [divPrjHeader,divPrjText]);
+				divUrl.appendChild(aUrl);
+				divIconZone.appendChild(divUrl);
+				bulkAppend(divFirstRow,[divName, divType, divLead])
+				bulkAppend(divSecondRow, [divGate, divPrj])
+				bulkAppend(divThirdRow, [divExec, divNotes]);
+				bulkAppend(divGlobal, [divIconZone, divFirstRow, divSecondRow, divThirdRow]);		
+
+				output.appendChild(divGlobal);
+			}
+			document.getElementById(totalId).innerText += "  (" + array.length +")"
+			target.appendChild(output);
+		}
+	}
+
+	var bulkAppend = function(parent, children) {
+		for(var i = 0; i < children.length; i++) {
+			parent.appendChild(children[i]);
+		}
+	}	
+
+	var bulkSetInnerText = function(el,tags) {
+		if(el.length != tags.length)
+			console.log("bulkSetInnerText sizes dont match")
+		for(i=0;i<el.length;i++)
+			el[i].innerText = tags[i];
+	}	
+
+	var bulkSetClass = function(el, cl) {
+		for(i=0;i<el.length;i++){
+			el[i].className += " " + cl 
+		}
+
+	}	
+	var div = function() {
+		return document.createElement("div");
+	}
+
+	var clearNull = function(array) {
+	array.forEach(function (obj) {
+		Object.keys(obj).forEach(function(key) {
+  			if (obj[key] == null)
+				obj[key] = "this is for testing purposes";
+		});
+	})
+	return array;
+	}	
+
+	//Api request with callback
+   	 var getList = function(callback) {
+		var url = "";
+        	$.ajax({
+            	url: url,
+           	method: 'GET',
+            	beforeSend: function(XMLHttpRequest) {
+                XMLHttpRequest.setRequestHeader('Accept', 'application/json; odata=verbose');
+            },
+            success: function(data) {
+                callback(data.d.results);
+            }
+        });
+    }
+	//receive full api element and generate smaller object of it
+   	var generateWorkPackage = function(elem) {
+               var workPackage = {};
+               workPackage.name = elem.Work_x0020_Package_x0020_Name;
+               workPackage.status = elem.Overall_x0020_Status;
+               workPackage.escalation = elem.Escalation_x0020_To;
+               workPackage.url = "" + elem.ID;
+               workPackage.type = elem.WorkPackage_x0020_Type;
+               workPackage.notes = elem.Overall_x0020_Work_x0020_Package;
+				workPackage.exec = elem.Briefing_x0020_Note;
+				workPackage.golive = elem.SM_x0020_Go_x0020_Live_x0020_Dat;
+				workPackage.lead = elem.SIT_x0020_Lead;
+		workPackage.gate = elem.Current_x0020_PGOF_x0020_Gate;
+		workPackage.prj = elem.Project_x0020__x0023_;
+               return workPackage;
+}
+	//split array into leading categories, return an object with named arrays
+	var splitLedType = function(array) 	{
+		var ssc = []; var cust = []; var other = [];
+			
+		for(var i = 0 ; i < array.length; i++) {
+			if(("SSC led").localeCompare(array[i].type) == 0) {
+				ssc.push(array[i]);
+				continue;
+			} else if(("Customer led").localeCompare(array[i].type) == 0) {
+				cust.push(array[i]);
+				continue;
+			} else if(("").localeCompare(array[i].type) == 0) {
+				other.push(array[i]);
+				continue;
+			}
+		}		
+		return {"ssc":ssc,"cust" : cust,"other":other}
+	}
+	
+</script>
+
+<!--
+	var getAllItems = function(OnComplete) {
+
+		function getItems(url) {
+        		$.ajax({
+            		url: url,
+           		method: "GET",
+            		beforeSend: function(XMLHttpRequest) {
+               		 XMLHttpRequest.setRequestHeader('Accept', 'application/json; odata=verbose'); },
+			success: function (data) {
+               			results = results.concat(data.d.results);
+                		if (data.d.__next) {
+                    			url = data.d.__next;
+                    			GetItems(url);
+               			}
+                		else {
+                    			nonext = true;
+                    			//if (typeof OnSuccess != 'undefined') OnSuccess(results);
+                		}
+           		 },
+			
+           	 	complete: function () {
+                	if (typeof OnComplete != 'undefined' && nonext) {
+                    		OnComplete(results);
+                	}
+           	}
+        });
+    }
+
+	var nonext = false;
+	var results = [];
+	var url = ""	
+	getItems(url);
+	}
+
+
+
+-->
