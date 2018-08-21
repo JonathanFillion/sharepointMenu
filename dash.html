@@ -1,38 +1,105 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!--Basic structure of the menu-->
 <div>
-            <button class="collapsible" type="button" id="pending-main" data-status="unlocked">Pending approval</button>
-            <div class="content" id="pending">
-                        <button class="inner-collapsible smaller" type="button" id="onboard-pending" data-status="unlocked">Pending approval to onboard</button>
+            <button class="collapsible" type="button" id="new-main" data-status="unlocked">New</button>
+            <div class="content" id="">
+                        <button class="inner-collapsible smaller" type="button" id="new-ssc" data-status="unlocked">SSC Led</button>
                         <div class="internalcontent">
-                                      <div id="wp-onboard"></div>
+                                      <div id="wp-new-ssc"></div>
                         </div>
-            <button class="inner-collapsible smaller" type="button" id="live-pending" data-status="unlocked">Pending approval to go live</button>
+            <button class="inner-collapsible smaller" type="button" id="new-cust" data-status="unlocked">Customer Led</button>
                         <div class="internalcontent">
-                                      <div id="wp-golive"></div>
+                                      <div id="wp-new-cust"></div>
                         </div>
-            <button class="inner-collapsible smaller" type="button" id="close-pending" data-status="unlocked">Pending approval to close</button>
+            <button class="inner-collapsible smaller" type="button" id="new-other" data-status="unlocked">Other</button>
                         <div class="internalcontent">
-                                      <div id="wp-close"></div>
+                                      <div id="wp-new-other"></div>
                         </div>
             </div>
 </div>
 <br />
- <div>
-            <button class="collapsible" type="button" id="escalation-button" data-status="unlocked">Escalation</button>
-            <div class="content" id="escalation"></div>
+<div>
+            <button class="collapsible" type="button" id="assessed-main" data-status="unlocked">Assessed</button>
+            <div class="content" id="">
+                        <button class="inner-collapsible smaller" type="button" id="assessed-ssc" data-status="unlocked">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-assessed-ssc"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="assessed-cust" data-status="unlocked">Customer Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-assessed-cust"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="assessed-other" data-status="unlocked">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-assessed-other"></div>
+                        </div>
+            </div>
+</div>
+<br />
+<div>
+            <button class="collapsible" type="button" id="pending-onboard-main" data-status="unlocked">Pending approval to onboard</button>
+            <div class="content" id="">
+                     <button class="inner-collapsible smaller" type="button" id="pending-onboard-ssc" data-status="unlocked">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-pending-onboard-ssc"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="pending-onboard-cust" data-status="unlocked">Customer Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-pending-onboard-cust"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="pending-onboard-other" data-status="unlocked">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-pending-onboard-other"></div>
+                        </div>   
+            </div>
+</div>
+<br />
+<div>
+            <button class="collapsible" type="button" id="green-main" data-status="unlocked">Green</button>
+            <div class="content" id="">
+                        <button class="inner-collapsible smaller" type="button" id="green-ssc" data-status="unlocked">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-green-ssc"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="green-cust" data-status="unlocked">Customer Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-green-cust"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="green-other" data-status="unlocked">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-green-other"></div>
+                        </div>
+            </div>
+</div>
+<br />
+<div>
+            <button class="collapsible" type="button" id="yellow-main" data-status="unlocked">Yellow</button>
+            <div class="content" id="">
+                        <button class="inner-collapsible smaller" type="button" id="yellow-ssc" data-status="unlocked">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-yellow-ssc"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="yellow-cust" data-status="unlocked">Customer Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-yellow-cust"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="yellow-other" data-status="unlocked">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-yellow-other"></div>
+                        </div>
+            </div>
 </div>
 <br />
 <div>
             <button class="collapsible" type="button" id="red-main" data-status="unlocked">Red</button>
-            <div class="content" id="red">
+            <div class="content" id="">
                         <button class="inner-collapsible smaller" type="button" id="red-ssc" data-status="unlocked">SSC Led</button>
                         <div class="internalcontent">
-                                      <div id="wp-red-sscled"></div>
+                                      <div id="wp-red-ssc"></div>
                         </div>
-            <button class="inner-collapsible smaller" type="button" id="red-cust" data-status="unlocked">Client Led</button>
+            <button class="inner-collapsible smaller" type="button" id="red-cust" data-status="unlocked">Customer Led</button>
                         <div class="internalcontent">
-                                      <div id="wp-red-client"></div>
+                                      <div id="wp-red-cust"></div>
                         </div>
             <button class="inner-collapsible smaller" type="button" id="red-other" data-status="unlocked">Other</button>
                         <div class="internalcontent">
@@ -40,26 +107,121 @@
                         </div>
             </div>
 </div>
- <br />
+<br />
 <div>
-            <button class="collapsible" type="button" id="yellow-main" data-status="unlocked">Yellow</button>
-            <div class="content" id="yellow">
-                        <button class="inner-collapsible smaller" type="button" id="yellow-ssc" data-status="unlocked">SSC Led</button>
+            <button class="collapsible" type="button" id="on-hold-main" data-status="unlocked">On Hold</button>
+            <div class="content" id="">
+                        <button class="inner-collapsible smaller" type="button" id="on-hold-ssc" data-status="unlocked">SSC Led</button>
                         <div class="internalcontent">
-                                      <div id="wp-yellow-sscled"></div>
+                                      <div id="wp-on-hold-ssc"></div>
                         </div>
-            <button class="inner-collapsible smaller" type="button" id="yellow-cust" data-status="unlocked">Client Led</button>
+            <button class="inner-collapsible smaller" type="button" id="on-hold-cust" data-status="unlocked">Customer Led</button>
                         <div class="internalcontent">
-                                      <div id="wp-yellow-client"></div>
+                                      <div id="wp-on-hold-cust"></div>
                         </div>
-            <button class="inner-collapsible smaller" type="button" id="yellow-other" data-status="unlocked">Other</button>
+            <button class="inner-collapsible smaller" type="button" id="on-hold-other" data-status="unlocked">Other</button>
                         <div class="internalcontent">
-                                      <div id="wp-yellow-other"></div>
+                                      <div id="wp-on-hold-other"></div>
                         </div>
             </div>
-</div>          
+</div>
+<br />
+<div>
+            <button class="collapsible" type="button" id="pending-live-main" data-status="unlocked">Pending approval to go live</button>
+            <div class="content" id="">
+                        <button class="inner-collapsible smaller" type="button" id="pending-live-ssc" data-status="unlocked">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-pending-live-ssc"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="pending-live-cust" data-status="unlocked">Customer Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-pending-live-cust"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="pending-live-other" data-status="unlocked">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-pending-live-other"></div>
+                        </div>
+            </div>
+</div>
+<br />
+<div>
+            <button class="collapsible" type="button" id="completed-main" data-status="unlocked">Completed</button>
+            <div class="content" id="">
+                        <button class="inner-collapsible smaller" type="button" id="completed-ssc" data-status="unlocked">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-completed-ssc"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="completed-cust" data-status="unlocked">Customer Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-completed-cust"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="completed-other" data-status="unlocked">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-completed-other"></div>
+                        </div>
+            </div>
+</div>
+<br />
+<div>
+            <button class="collapsible" type="button" id="pending-close-main" data-status="unlocked">Pending approval to close</button>
+            <div class="content" id="">
+                      <button class="inner-collapsible smaller" type="button" id="pending-close-ssc" data-status="unlocked">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-pending-close-ssc"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="pending-close-cust" data-status="unlocked">Customer Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-pending-close-cust"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="pending-close-other" data-status="unlocked">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-pending-close-other"></div>
+                        </div>  
+            </div>
+</div>
+<br />
+<div>
+            <button class="collapsible" type="button" id="closed-main" data-status="unlocked">Closed</button>
+            <div class="content" id="">
+                        <button class="inner-collapsible smaller" type="button" id="closed-ssc" data-status="unlocked">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-closed-ssc"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="closed-cust" data-status="unlocked">Customer Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-closed-cust"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="closed-other" data-status="unlocked">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-closed-other"></div>
+                        </div>
+            </div>
+</div>
+<br />
+<!--
+<div>
+            <button class="collapsible" type="button" id="escalation-main" data-status="unlocked">Escalation</button>
+            	<div class="content" id="">
+			<button class="inner-collapsible smaller" type="button" id="escalation-dg" data-status="unlocked">Escalation to DG</button>
+                        	<div class="internalcontent">
+                                      	<div id="wp-escalation-dg"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="escalation-director" data-status="unlocked">Escalation to director</button>
+                        <div class="internalcontent">
+                                      <div id="wp-escalation-director"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="escalation-manager" data-status="unlocked">Escalation to manager</button>
+                        <div class="internalcontent">
+                                      <div id="wp-escalation-manager"></div>
+                        </div>
+</div>
+</div>
+<br />
+    -->      
 <style>
 /* Style the button that is used to open and close the collapsible content */
+
+@media screen {
 .collapsible {
 		background-color: #eee;
 		color: #444;
@@ -136,6 +298,7 @@
 		padding-right:10px;
 		padding-bottom:10px;
 		padding-left:10px;
+		margin-right: 25px;
 		display:flex;
 		flex-wrap:nowrap;
 		justify-content:flex-start;
@@ -148,18 +311,18 @@
 		background-color : white;
 		min-height:35px;
 		flex-grow:1;
-		flex-basis:33%;
+		flex-basis:32%;
 		border: 1px solid;
 	}
-:nth-of-type(2n).cell {}
 
 .global {
 		background-color: #e3e8ef;
 		padding-top: 15px;
 	 	box-sizing: border-box;
-    		border: groove  5px;
+    	border: groove 2px #5c5d5e;
 		margin: 20px;
-		margin-top: 30px;	
+		margin-top: 30px;
+		padding-bottom : 25px;	
 	}
 .global-empty {
 		box-sizing: border-box;
@@ -188,17 +351,98 @@
 		font-size: 15px;
 		margin-left: 10px;
 		}
-
 .iconzone {
 		 overflow: auto;
 		}
 
 .infoicon {
 		width: 33px;
-		heigth: auto;
+		height: auto;
+		
 		float: right;
 		margin-right : 13px;
 		}
+
+.red-background {
+	background-color: #ef5f5f;
+}
+
+.yellow-background {
+	background-color: #f9f9b3;
+}
+
+.green-background {
+	background-color: #8de088;
+}
+}
+
+@media print {
+ .infoicon {
+	display: none;
+}
+
+#titleAreaBox {
+	display: none;
+}
+#s4-titlerow {
+	display: none;
+width: 0; height: 0;
+}
+
+
+.header 	{
+		margin-top:-31px;
+		font-size: 15px;
+		font-weight: bold;
+		margin-left: 3px;
+		}
+
+.text		{
+		margin-top : 2px;
+		font-size: 13px;
+		margin-left: 10px;
+		}
+.row {
+		padding-top:30px;
+		padding-right:10px;
+		padding-bottom:10px;
+		padding-left:10px;
+		margin-right: 25px;
+		display:flex;
+		flex-wrap:nowrap;
+		justify-content:flex-start;
+		align-items:stretch;
+		vertical-align: middle;
+		line-height: 30px; 
+	}
+.cell 	{
+		margin: 5px;
+		background-color : white;
+		min-height:35px;
+		flex-grow:1;
+		flex-basis:33%;
+		border: 1px solid;
+	}
+.global {
+	page-break-inside: avoid;
+	border-top: 5px solid;
+}
+[data-status="unlocked"],[data-status="locked"] {
+	display: none;
+}
+
+.flex35 	{
+		flex-basis:35%;
+		border-right: 1px solid;
+		}
+
+.flex65 	{
+		flex-basis:65%;
+		border-left: 1px solid;
+		}
+
+
+}
 </style>
 <script>
 var setActive = function(classname, attr) {
@@ -229,37 +473,41 @@ setActive("inner-collapsible", "inner-active");
         //Simple triage function, for all projects, put them in the good array
 	//Compare using localeCompare, if == 0 then they are equal.    
 	function(array) {
-		console.log(array)
-		var StatusConditions = ["pending approval to on-board", 
-					"pending approval to go live", 
-					"pending approval to close",
-					"yellow",
-					 "red"];
+	console.log(array)
+		array = clearNull(array)
+		var StatusConditions = ["pending approval to on-board", "pending approval to go live","pending approval to close","yellow","red","green", "closed", "on hold", "completed", "new", "assessed"];
 		var EscalationConditions = ["dg","director","manager"];
-             	var pending = {};
- 		var escalation = {};
-		var yellow = {};
-		var red = {};
+		
 		var escalationDG = [];
 		var escalationDirector = [];
 		var escalationManager = [];
-	      	var pendingOnboard = [];
-              	var pendingLive = [];
-              	var pendingClose = [];
-              	var yellowArray = [];
-              	var redArray = [];
-		var arraysStatus = [pendingOnboard,pendingLive,pendingClose,yellowArray,redArray];
+	    var pendingOnboard = [];
+        var pendingLive = [];
+        var pendingClose = [];
+        var yellowArray = [];
+        var redArray = [];
+		var greenArray = [];
+		var closedArray = [];
+		var onholdArray = [];
+		var completedArray = [];
+		var _newArray = [];
+		var assessedArray = [];
+		var arraysStatus = [pendingOnboard,pendingLive,pendingClose,yellowArray,redArray, greenArray, closedArray, onholdArray, completedArray, _newArray, assessedArray];
 		var arraysEscalation = [escalationDG, escalationDirector, escalationManager];
-                for(var i = 0 ; i < array.length; i++){
+        
+		//For the whole SP list, find the wp you want
+		for(var i = 0 ; i < array.length; i++){
 			var status = array[i].Overall_x0020_Status.toLowerCase();
+			//For all the status conditions (red,yellow....), sort each work package and if condition true, put in respecting array
 			for(var j = 0; j < StatusConditions.length; j++) {
 				if(StatusConditions[j].localeCompare(status) == 0) {
 					arraysStatus[j].push(generateWorkPackage(array[i]));
 					break;	
 				}
 			}
+			//Same thing for any escalated wp
 			var escalationStatus = array[i].Escalation_x0020_To
-			if(escalationStatus !== null) {
+			if(escalationStatus != null) {
 				escalationStatus = escalationStatus.toLowerCase()			
 				for(var j = 0 ; j < EscalationConditions.length; j++) {
 					if(EscalationConditions[j].localeCompare(escalationStatus) == 0) {
@@ -268,137 +516,250 @@ setActive("inner-collapsible", "inner-active");
 					}
 				}
 			}
-            	}
-
-	pending = {"pending-onboard" : pendingOnboard, "pending-golive" : pendingLive, "pending-close" : pendingClose};
-	escalation = {"escalation-dg" : escalationDG};
-	yellow = splitLedType(yellowArray);
-	red = splitLedType(redArray);
+        }
+	//final results are stored here
+	var pending_onboard = splitLedType(pendingOnboard);
+	var pending_live = splitLedType(pendingLive);
+	var pending_close = splitLedType(pendingClose);
+	var yellow = splitLedType(yellowArray);
+	var red = splitLedType(redArray);
+	var green = splitLedType(greenArray);
+	var closed = splitLedType(closedArray);
+	var onhold = splitLedType(onholdArray);
+	var completed = splitLedType(completedArray);
+	var _new =splitLedType(_newArray);
+	var assessed = splitLedType(assessedArray);
 	
-	setTotalsAndLockIfEmpty(pending["pending-onboard"].length + pending["pending-golive"].length + pending["pending-close"].length, "pending-main");
-	setTotalsAndLockIfEmpty(red["ssc"].length + red["cust"].length + red["other"].length, "red-main");
-	setTotalsAndLockIfEmpty(yellow["ssc"].length + yellow["cust"].length + yellow["other"].length, "yellow-main");
-	generateHtml(pending["pending-onboard"], "wp-onboard", "onboard-pending");
-	generateHtml(pending["pending-golive"], "wp-golive", "live-pending");
-	generateHtml(pending["pending-close"], "wp-close", "close-pending");
-	generateHtml(escalation["escalationDG"],"escalation", "escalation-button");
-	generateHtml(red["ssc"],"wp-red-sscled", "red-ssc");
-	generateHtml(red["cust"],"wp-red-client", "red-cust");
-	generateHtml(red["other"],"wp-red-other", "red-other");
-	generateHtml(yellow["ssc"],"wp-yellow-sscled", "yellow-ssc");
-	generateHtml(yellow["cust"],"wp-yellow-client", "yellow-cust");
-	generateHtml(yellow["other"],"wp-yellow-other", "yellow-other");
+	//var escalation = {edg : escalationDG , ed : escalationDirector, em : escalationManager};
+	
+	//Pending onboard
+	setTotalsAndLockIfEmpty(pending_onboard.len, "pending-onboard-main");
+	generateHtml(pending_onboard.ssc, "wp-pending-onboard-ssc", "pending-onboard-ssc");
+	generateHtml(pending_onboard.cust, "wp-pending-onboard-cust", "pending-onboard-cust");
+	generateHtml(pending_onboard.other, "wp-pending-onboard-other", "pending-onboard-other");
+	//Pending live
+	setTotalsAndLockIfEmpty(pending_live.len, "pending-live-main");
+	generateHtml(pending_live.ssc, "wp-pending-live-ssc", "pending-live-ssc");
+	generateHtml(pending_live.cust, "wp-pending-live-cust", "pending-live-cust");
+	generateHtml(pending_live.other, "wp-pending-live-other", "pending-live-other");
+	//Pending closed
+	setTotalsAndLockIfEmpty(pending_close.len, "pending-close-main");
+	generateHtml(pending_close.ssc, "wp-pending-close-ssc", "pending-close-ssc");
+	generateHtml(pending_close.cust, "wp-pending-close-cust", "pending-close-cust");
+	generateHtml(pending_close.other, "wp-pending-close-other", "pending-close-other");
+	//Escalation
+	//setTotalsAndLockIfEmpty(escalation.edg.length + escalation.ed.length + escalation.em.length, "escalation-main");
+	//generateHtml(escalation.edg,"wp-escalation-dg", "escalation-dg");
+	//generateHtml(escalation.ed,"wp-escalation-director", "escalation-director");
+	//generateHtml(escalation.em,"wp-escalation-manager", "escalation-manager");
+	//Red
+	setTotalsAndLockIfEmpty(red.len, "red-main");
+	generateHtml(red.ssc,"wp-red-ssc", "red-ssc");
+	generateHtml(red.cust,"wp-red-cust", "red-cust");
+	generateHtml(red.other,"wp-red-other", "red-other");
+	//Yellow
+	setTotalsAndLockIfEmpty(yellow.len, "yellow-main");
+	generateHtml(yellow.ssc,"wp-yellow-ssc", "yellow-ssc");
+	generateHtml(yellow.cust,"wp-yellow-cust", "yellow-cust");
+	generateHtml(yellow.other,"wp-yellow-other", "yellow-other");
+	//Green
+	setTotalsAndLockIfEmpty(green.len, "green-main");
+	generateHtml(green.ssc,"wp-green-ssc", "green-ssc");
+	generateHtml(green.cust,"wp-green-cust", "green-cust");
+	generateHtml(green.other,"wp-green-other", "green-other");
+	//New
+	setTotalsAndLockIfEmpty(_new.len, "new-main");
+	generateHtml(_new.ssc,"wp-new-ssc", "new-ssc");
+	generateHtml(_new.cust,"wp-new-cust", "new-cust");
+	generateHtml(_new.other,"wp-new-other", "new-other");
+	//Assessed
+	setTotalsAndLockIfEmpty(assessed.len, "assessed-main");
+	generateHtml(assessed.ssc,"wp-assessed-ssc", "assessed-ssc");
+	generateHtml(assessed.cust,"wp-assessed-cust", "assessed-cust");
+	generateHtml(assessed.other,"wp-assessed-other", "assessed-other");
+	//Completed
+	setTotalsAndLockIfEmpty(completed.len, "completed-main");
+	generateHtml(completed.ssc,"wp-completed-ssc", "completed-ssc");
+	generateHtml(completed.cust,"wp-completed-cust", "completed-cust");
+	generateHtml(completed.other,"wp-completed-other", "completed-other");
+	//Closed
+	setTotalsAndLockIfEmpty(closed.len, "closed-main");
+	generateHtml(closed.ssc,"wp-closed-ssc", "closed-ssc");
+	generateHtml(closed.cust,"wp-closed-cust", "closed-cust");
+	generateHtml(closed.other,"wp-closed-other", "closed-other");
+	//On Hold
+	setTotalsAndLockIfEmpty(onhold.len, "on-hold-main");
+	generateHtml(onhold.ssc,"wp-on-hold-ssc", "on-hold-ssc");
+	generateHtml(onhold.cust,"wp-on-hold-cust", "on-hold-cust");
+	generateHtml(onhold.other,"wp-on-hold-other", "on-hold-other");
+	
+	
+	
+	
+	
+	
 	})
     });
+	//Look if the parent element contains any children, if not, then lock it.
 	var setTotalsAndLockIfEmpty = function(len, id) {
 		document.getElementById(id).innerText += "  (" + len + ")"
 		if(len == 0) {
-			$(id).data("status", "locked");
+			document.querySelector("#"+id).setAttribute("data-status", "locked");
 		}
 	}
-	//gen html and append to id
+	//generate the final dynamically generated html and append to id
 	var generateHtml = function(array, id, totalId) {
 		var target = document.getElementById(id);
 		var output = document.createElement("div");
+		var statusIcon;
+		var aUrl = document.createElement("a");
+		var showList = false;
 		if(array === undefined || array.length == 0) {
-			
 			document.getElementById(totalId).innerText += "  (0)";
 			document.querySelector("#"+totalId).setAttribute("data-status", "locked");
-			
 			return;
 		} else {
-			array = clearNull(array);
-			
+		//for the array provided, generate the html (each wp)
+		
+		
+		if(array.length > 8)
+			showList = true;
+		
 		for(var i = 0 ; i < array.length; i++) {
-				var divGlobal = div(), divFirstRow = div(), divSecondRow = div(),divThirdRow = div(),divName= div(),divGate = div(),
-				divLead = div(),divType = div(),divNotes = div(),divExec = div(),divUrl = div(), divIconZone = div(), divPrj = div();
+			//Containers
+			var divGlobal = div(), divFirstRow = div(), divSecondRow = div(),divThirdRow = div(),divName= div(),divGate = div(),
+			divLead = div(),divType = div(),divNotes = div(),divExec = div(),divUrl = div(), divIconZone = div(), divPrj = div(), divStatus = div();
+			//headers and text	
+			var divNameHeader = div(), divNameText = div(), divGateHeader = div(), divGateText =div(), divLeadHeader=div(), divLeadText = div(), divTypeHeader = div(), divTypeText = div(), divNotesHeader = div(), divNotesText = div(), divExecHeader = div(), divExecText= div(), divPrjHeader = div(), divPrjText = div(), divStatusHeader = div(), divStatusText = div();
+
+			aUrl = createIconWithLink("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/images/icons/info-sign-md.png","infoicon");
+
+			divGlobal.className = "global";
+			//Set row
+			bulkSetClass([divFirstRow,divSecondRow,divThirdRow],"row");
+			//set cell
+			bulkSetClass([divName,divGate,divLead,divType,divPrj, divStatus], "cell")
+			divExec.className = "flex35 cell";
+			divNotes.className = "flex65 cell";
+			divIconZone.className = "iconzone";
+
+			//Setting the data
+			bulkSetInnerText([divNameText,divLeadText,divGateText,divTypeText,divExecText,divNotesText,divPrjText, divStatusText],[array[i].name, array[i].lead,array[i].gate,array[i].type,array[i].exec,array[i].notes,array[i].prj, array[i].status]);
+
+			//color setup here, refactor if possible
+			
+			if(array[i].status.localeCompare("Red") == 0) {
+				statusIcon = createIcon("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/images/icons/Button_Icon_Red.svg.png", "infoicon");
+				}
+			if(array[i].status.localeCompare("Yellow") == 0) {
+				 statusIcon = createIcon("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/images/icons/Button_Icon_Yellow.svg.png", "infoicon");
+				}
+			
+			if(array[i].status.localeCompare("Green") == 0) {
+				 statusIcon = createIcon("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/images/icons/Button_Icon_Green.svg.png", "infoicon");
+				}
+			
+			
+			//Setting class text
+			bulkSetClass([divNameText, divLeadText,divGateText,divTypeText,divExecText,divNotesText, divPrjText, divStatusText],"text");	
+
+			//Set the labels
+			bulkSetInnerText([divNameHeader,divLeadHeader ,divGateHeader, divTypeHeader, divExecHeader,divNotesHeader, divPrjHeader, divStatusHeader], ["Work package name","SMTPS lead","PGOF gate","Work package Type","Executive summary","Overall work package notes","Project number", "Project status"]);
+			//Setting header class
+			bulkSetClass([divNameHeader, divLeadHeader,divGateHeader,divTypeHeader,divExecHeader,divNotesHeader, divPrjHeader, divStatusHeader],"header");	
 				
-				var divNameHeader = div(), divNameText = div(), divGateHeader = div(), divGateText =div(),divLeadHeader=div(), 		divLeadText = div(), divTypeHeader = div(), divTypeText = div(), divNotesHeader = div(), divNotesText = div(), divExecHeader = div(), divExecText= div(), divPrjHeader = div(), divPrjText = div();
-
-				var aUrl = document.createElement("a");
-				var infoImg = document.createElement("img");
-				infoImg.src = "https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/images/icons/info-sign-md.png"
-				infoImg.className = "infoicon"
-				aUrl.appendChild(infoImg)
-				divGlobal.className = "global";
-				divFirstRow.className = "row";
-				divSecondRow.className = "row";
-				divThirdRow.className = "row";
-				divName.className = "cell"
-				divGate.className = "cell";
-				divLead.className = "cell";
-				divType.className = "cell";
-				divPrj.className = "cell";
-				divExec.className = "flex35 cell";
-				divNotes.className = "flex65 cell";
-				divIconZone.className = "iconzone";
-
-				bulkSetInnerText([divNameText,divLeadText,divGateText,divTypeText,divExecText,divNotesText,divPrjText],[array[i].name, array[i].lead,array[i].gate,array[i].type,array[i].exec,array[i].notes,array[i].prj]);
-
-				bulkSetClass([divNameText, divLeadText,divGateText,divTypeText,divExecText,divNotesText, divPrjText],"text");	
+			aUrl.href = array[i].url;
+			
+			//Append all this shit together
+			bulkAppend(divName,[divNameHeader,divNameText]);
+			bulkAppend(divLead,[divLeadHeader,divLeadText]);
+			bulkAppend(divGate,[divGateHeader,divGateText]);
+			bulkAppend(divType,[divTypeHeader,divTypeText]);
+			bulkAppend(divExec,[divExecHeader,divExecText]);
+			bulkAppend(divNotes, [divNotesHeader,divNotesText]);
+			bulkAppend(divPrj, [divPrjHeader,divPrjText]);
+			bulkAppend(divStatus, [divStatusHeader, divStatusText]);
+			if((typeof statusIcon) !== "undefined")
+				divUrl.appendChild(statusIcon)
 				
-				bulkSetInnerText([divNameHeader,divLeadHeader ,divGateHeader, divTypeHeader, divExecHeader,divNotesHeader, divPrjHeader], ["Work package name","SMTPS lead","PGOF gate","Work package Type","Executive summary","Overall work package notes","Project number"]);
+			divUrl.appendChild(aUrl);	
+			divIconZone.appendChild(divUrl);
+			bulkAppend(divFirstRow,[divName, divPrj, divLead])
+			bulkAppend(divSecondRow, [divGate, divType, divStatus])
+			bulkAppend(divThirdRow, [divExec, divNotes]);
+			
+			//Depending on length of array
+			if(showList)
+				bulkAppend(divGlobal, [divIconZone, divFirstRow]);
+			else
+				bulkAppend(divGlobal, [ divIconZone,divFirstRow, divSecondRow, divThirdRow]);		
 
-				bulkSetClass([divNameHeader, divLeadHeader,divGateHeader,divTypeHeader,divExecHeader,divNotesHeader, divPrjHeader],"header");	
-				
-				aUrl.href = array[i].url;
-				bulkAppend(divName,[divNameHeader,divNameText]);
-				bulkAppend(divLead,[divLeadHeader,divLeadText]);
-				bulkAppend(divGate,[divGateHeader,divGateText]);
-				bulkAppend(divType,[divTypeHeader,divTypeText]);
-				bulkAppend(divExec,[divExecHeader,divExecText]);
-				bulkAppend(divNotes, [divNotesHeader,divNotesText]);
-				bulkAppend(divPrj, [divPrjHeader,divPrjText]);
-				divUrl.appendChild(aUrl);
-				divIconZone.appendChild(divUrl);
-				bulkAppend(divFirstRow,[divName, divType, divLead])
-				bulkAppend(divSecondRow, [divGate, divPrj])
-				bulkAppend(divThirdRow, [divExec, divNotes]);
-				bulkAppend(divGlobal, [divIconZone, divFirstRow, divSecondRow, divThirdRow]);		
+			
+			
+			output.appendChild(divGlobal);
 
-				output.appendChild(divGlobal);
 			}
-			document.getElementById(totalId).innerText += "  (" + array.length +")"
-			target.appendChild(output);
+		document.getElementById(totalId).innerText += "  (" + array.length +")"
+		target.appendChild(output);
 		}
 	}
+	//Create icon from src imgSrc with class imgClass
+	var createIconWithLink = function(imgSrc, imgClass) {
+		var a = document.createElement("a");
+		var img = document.createElement("img");
+		img.src = imgSrc;
+		img.className = imgClass;
+		a.target = "_blank";
+		a.appendChild(img);
+		return a;
 
+		}	
+		var createIcon = function(imgSrc, imgClass) {
+		var a = document.createElement("a");
+		var img = document.createElement("img");
+		img.src = imgSrc;
+		img.className = imgClass;
+		return img;
+
+		}	
+	//Appending a lot of childs
 	var bulkAppend = function(parent, children) {
 		for(var i = 0; i < children.length; i++) {
 			parent.appendChild(children[i]);
 		}
 	}	
-
+	//receives 2 arrays, one with elems, one with tags, just loop and apply tags
 	var bulkSetInnerText = function(el,tags) {
 		if(el.length != tags.length)
 			console.log("bulkSetInnerText sizes dont match")
 		for(i=0;i<el.length;i++)
 			el[i].innerText = tags[i];
 	}	
-
+	//receives an array of elems (html) and append the class name to it.
 	var bulkSetClass = function(el, cl) {
 		for(i=0;i<el.length;i++){
 			el[i].className += " " + cl 
 		}
 
-	}	
+	}
+	//Just make me a div.............ffs
 	var div = function() {
 		return document.createElement("div");
 	}
-
+	//get rid of nulls
 	var clearNull = function(array) {
 	array.forEach(function (obj) {
 		Object.keys(obj).forEach(function(key) {
   			if (obj[key] == null)
-				obj[key] = "this is for testing purposes";
+				obj[key] = "";
 		});
 	})
 	return array;
 	}	
 
-	//Api request with callback
+	//Api request with callback, onsucces of request, callback
    	 var getList = function(callback) {
-		var url = "";
+		var url = "https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/_api/Web/Lists(guid'06552974-e76b-464f-8636-7acae451810d')/Items?$top=200&$orderby=Work_x0020_Package_x0020_Name";
         	$.ajax({
             	url: url,
            	method: 'GET',
@@ -410,78 +771,40 @@ setActive("inner-collapsible", "inner-active");
             }
         });
     }
+
 	//receive full api element and generate smaller object of it
    	var generateWorkPackage = function(elem) {
-               var workPackage = {};
-               workPackage.name = elem.Work_x0020_Package_x0020_Name;
-               workPackage.status = elem.Overall_x0020_Status;
-               workPackage.escalation = elem.Escalation_x0020_To;
-               workPackage.url = "" + elem.ID;
-               workPackage.type = elem.WorkPackage_x0020_Type;
-               workPackage.notes = elem.Overall_x0020_Work_x0020_Package;
-				workPackage.exec = elem.Briefing_x0020_Note;
-				workPackage.golive = elem.SM_x0020_Go_x0020_Live_x0020_Dat;
-				workPackage.lead = elem.SIT_x0020_Lead;
+		var workPackage = {};
+		workPackage.name = elem.Work_x0020_Package_x0020_Name;
+		workPackage.status = elem.Overall_x0020_Status;
+		workPackage.escalation = elem.Escalation_x0020_To;
+		workPackage.url = "https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Lists/StatusReportAlpha/DispForm.aspx?ID=" + elem.ID;
+		workPackage.type = elem.WorkPackage_x0020_Type;
+		workPackage.notes = elem.Overall_x0020_Work_x0020_Package;
+		workPackage.exec = elem.Briefing_x0020_Note;
+		workPackage.golive = elem.SM_x0020_Go_x0020_Live_x0020_Dat;
+		workPackage.lead = elem.SIT_x0020_Lead;
 		workPackage.gate = elem.Current_x0020_PGOF_x0020_Gate;
 		workPackage.prj = elem.Project_x0020__x0023_;
-               return workPackage;
+        return workPackage;
 }
-	//split array into leading categories, return an object with named arrays
+	//split array into leading (ssc, customer, other) categories, return an object with named arrays
 	var splitLedType = function(array) 	{
-		var ssc = []; var cust = []; var other = [];
+		var Assc = []; var Acust = []; var Aother = [];
 			
 		for(var i = 0 ; i < array.length; i++) {
 			if(("SSC led").localeCompare(array[i].type) == 0) {
-				ssc.push(array[i]);
+				Assc.push(array[i]);
 				continue;
 			} else if(("Customer led").localeCompare(array[i].type) == 0) {
-				cust.push(array[i]);
+				Acust.push(array[i]);
 				continue;
 			} else if(("").localeCompare(array[i].type) == 0) {
-				other.push(array[i]);
+				Aother.push(array[i]);
 				continue;
 			}
 		}		
-		return {"ssc":ssc,"cust" : cust,"other":other}
+		return {ssc:Assc,cust: Acust,other:Aother, len: array.length}
 	}
 	
 </script>
-
-<!--
-	var getAllItems = function(OnComplete) {
-
-		function getItems(url) {
-        		$.ajax({
-            		url: url,
-           		method: "GET",
-            		beforeSend: function(XMLHttpRequest) {
-               		 XMLHttpRequest.setRequestHeader('Accept', 'application/json; odata=verbose'); },
-			success: function (data) {
-               			results = results.concat(data.d.results);
-                		if (data.d.__next) {
-                    			url = data.d.__next;
-                    			GetItems(url);
-               			}
-                		else {
-                    			nonext = true;
-                    			//if (typeof OnSuccess != 'undefined') OnSuccess(results);
-                		}
-           		 },
-			
-           	 	complete: function () {
-                	if (typeof OnComplete != 'undefined' && nonext) {
-                    		OnComplete(results);
-                	}
-           	}
-        });
-    }
-
-	var nonext = false;
-	var results = [];
-	var url = ""	
-	getItems(url);
-	}
-
-
-
--->
