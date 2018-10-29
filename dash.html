@@ -1,4 +1,4 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/dev/librairies/jquery-3.3.1.min.js"></script>
 <!--Basic structure of the menu-->
 <div>
             <button class="collapsible" type="button" id="new-main" data-status="unlocked">New</button>
@@ -220,7 +220,6 @@
     -->      
 <style>
 /* Style the button that is used to open and close the collapsible content */
-
 @media screen {
 .collapsible {
 		background-color: #eee;
@@ -273,13 +272,11 @@
 		border: 1px solid black;
 		font-weight: bold;
 }
-
 .inner-active {
 		background-color: #c4c8ce;
 		border: 1px solid black;
 		font-weight: bold;
 }
-
 /* Style the collapsible content. Note: hidden by default */
 .content {
 		display: none;
@@ -292,7 +289,6 @@
 		display: none;
 		overflow: hidden;
 	}
-
 .row {
 		padding-top:30px;
 		padding-right:10px;
@@ -314,7 +310,6 @@
 		flex-basis:32%;
 		border: 1px solid;
 	}
-
 .global {
 		background-color: #e3e8ef;
 		padding-top: 15px;
@@ -328,24 +323,20 @@
 		box-sizing: border-box;
 		margin: 20px;
 		}
-
 .flex35 	{
 		flex-basis:35%;
 		border-right: 1px solid;
 		}
-
 .flex65 	{
 		flex-basis:65%;
 		border-left: 1px solid;
 		}
-
 .header 	{
 		margin-top:-31px;
 		font-size: 20px;
 		font-weight: bold;
 		margin-left: 3px;
 		}
-
 .text		{
 		margin-top : 2px;
 		font-size: 15px;
@@ -354,7 +345,6 @@
 .iconzone {
 		 overflow: auto;
 		}
-
 .infoicon {
 		width: 33px;
 		height: auto;
@@ -362,25 +352,20 @@
 		float: right;
 		margin-right : 13px;
 		}
-
 .red-background {
 	background-color: #ef5f5f;
 }
-
 .yellow-background {
 	background-color: #f9f9b3;
 }
-
 .green-background {
 	background-color: #8de088;
 }
 }
-
 @media print {
  .infoicon {
 	display: none;
 }
-
 #titleAreaBox {
 	display: none;
 }
@@ -388,15 +373,12 @@
 	display: none;
 width: 0; height: 0;
 }
-
-
 .header 	{
 		margin-top:-31px;
 		font-size: 15px;
 		font-weight: bold;
 		margin-left: 3px;
 		}
-
 .text		{
 		margin-top : 2px;
 		font-size: 13px;
@@ -430,18 +412,14 @@ width: 0; height: 0;
 [data-status="unlocked"],[data-status="locked"] {
 	display: none;
 }
-
 .flex35 	{
 		flex-basis:35%;
 		border-right: 1px solid;
 		}
-
 .flex65 	{
 		flex-basis:65%;
 		border-left: 1px solid;
 		}
-
-
 }
 </style>
 <script>
@@ -462,7 +440,6 @@ var setActive = function(classname, attr) {
         	      });
 	}
 }
-
 setActive("collapsible","active");
 setActive("inner-collapsible", "inner-active");
 </script>
@@ -631,9 +608,7 @@ setActive("inner-collapsible", "inner-active");
 			divLead = div(),divType = div(),divNotes = div(),divExec = div(),divUrl = div(), divIconZone = div(), divPrj = div(), divStatus = div();
 			//headers and text	
 			var divNameHeader = div(), divNameText = div(), divGateHeader = div(), divGateText =div(), divLeadHeader=div(), divLeadText = div(), divTypeHeader = div(), divTypeText = div(), divNotesHeader = div(), divNotesText = div(), divExecHeader = div(), divExecText= div(), divPrjHeader = div(), divPrjText = div(), divStatusHeader = div(), divStatusText = div();
-
-			aUrl = createIconWithLink("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/images/icons/info-sign-md.png","infoicon");
-
+			aUrl = createIconWithLink("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/dev/pictures/Information_icon.svg.png","infoicon");
 			divGlobal.className = "global";
 			//Set row
 			bulkSetClass([divFirstRow,divSecondRow,divThirdRow],"row");
@@ -642,27 +617,24 @@ setActive("inner-collapsible", "inner-active");
 			divExec.className = "flex35 cell";
 			divNotes.className = "flex65 cell";
 			divIconZone.className = "iconzone";
-
 			//Setting the data
 			bulkSetInnerText([divNameText,divLeadText,divGateText,divTypeText,divExecText,divNotesText,divPrjText, divStatusText],[array[i].name, array[i].lead,array[i].gate,array[i].type,array[i].exec,array[i].notes,array[i].prj, array[i].status]);
-
 			//color setup here, refactor if possible
 			
 			if(array[i].status.localeCompare("Red") == 0) {
-				statusIcon = createIcon("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/images/icons/Button_Icon_Red.svg.png", "infoicon");
+				statusIcon = createIcon("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/dev/pictures/2000px-Button_Icon_Red.svg.png", "infoicon");
 				}
 			if(array[i].status.localeCompare("Yellow") == 0) {
-				 statusIcon = createIcon("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/images/icons/Button_Icon_Yellow.svg.png", "infoicon");
+				 statusIcon = createIcon("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/dev/pictures/2000px-Button_Icon_Yellow.svg.png", "infoicon");
 				}
 			
 			if(array[i].status.localeCompare("Green") == 0) {
-				 statusIcon = createIcon("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/images/icons/Button_Icon_Green.svg.png", "infoicon");
+				 statusIcon = createIcon("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/dev/pictures/Button_Icon_Green.svg.png", "infoicon");
 				}
 			
 			
 			//Setting class text
 			bulkSetClass([divNameText, divLeadText,divGateText,divTypeText,divExecText,divNotesText, divPrjText, divStatusText],"text");	
-
 			//Set the labels
 			bulkSetInnerText([divNameHeader,divLeadHeader ,divGateHeader, divTypeHeader, divExecHeader,divNotesHeader, divPrjHeader, divStatusHeader], ["Work package name","SMTPS lead","PGOF gate","Work package Type","Executive summary","Overall work package notes","Project number", "Project status"]);
 			//Setting header class
@@ -693,11 +665,9 @@ setActive("inner-collapsible", "inner-active");
 				bulkAppend(divGlobal, [divIconZone, divFirstRow]);
 			else
 				bulkAppend(divGlobal, [ divIconZone,divFirstRow, divSecondRow, divThirdRow]);		
-
 			
 			
 			output.appendChild(divGlobal);
-
 			}
 		document.getElementById(totalId).innerText += "  (" + array.length +")"
 		target.appendChild(output);
@@ -712,7 +682,6 @@ setActive("inner-collapsible", "inner-active");
 		a.target = "_blank";
 		a.appendChild(img);
 		return a;
-
 		}	
 		var createIcon = function(imgSrc, imgClass) {
 		var a = document.createElement("a");
@@ -720,7 +689,6 @@ setActive("inner-collapsible", "inner-active");
 		img.src = imgSrc;
 		img.className = imgClass;
 		return img;
-
 		}	
 	//Appending a lot of childs
 	var bulkAppend = function(parent, children) {
@@ -740,9 +708,8 @@ setActive("inner-collapsible", "inner-active");
 		for(i=0;i<el.length;i++){
 			el[i].className += " " + cl 
 		}
-
 	}
-	//Just make me a div.............ffs
+	
 	var div = function() {
 		return document.createElement("div");
 	}
@@ -756,7 +723,6 @@ setActive("inner-collapsible", "inner-active");
 	})
 	return array;
 	}	
-
 	//Api request with callback, onsucces of request, callback
    	 var getList = function(callback) {
 		var url = "https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/_api/Web/Lists(guid'06552974-e76b-464f-8636-7acae451810d')/Items?$top=200&$orderby=Work_x0020_Package_x0020_Name";
@@ -771,7 +737,6 @@ setActive("inner-collapsible", "inner-active");
             }
         });
     }
-
 	//receive full api element and generate smaller object of it
    	var generateWorkPackage = function(elem) {
 		var workPackage = {};
