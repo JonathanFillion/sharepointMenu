@@ -1,5 +1,5 @@
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/dev/librairies/jquery-3.3.1.min.js"></script>
 <!--Basic structure of the menu-->
 
 <h1>Executive report</h1>
@@ -413,7 +413,7 @@ divLead = div(),divType = div(),divNotes = div(),divExec = div(),divUrl = div(),
 //headers and text	
 var divNameHeader = div(), divNameText = div(), divGateHeader = div(), divGateText =div(),divLeadHeader=div(), divLeadText = div(), divTypeHeader = div(), divTypeText = div(), divNotesHeader = div(), divNotesText = div(), divExecHeader = div(), divExecText= div(), divPrjHeader = div(), divPrjText = div(), divStatusHeader = div(), divStatusText = div(), divDescText = div(), divDescHeader = div();
 
-var aUrl = createIcon("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/images/icons/info-sign-md.png","infoicon")
+var aUrl = createIcon("https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/dev/pictures/Information_icon.svg.png","infoicon")
 
 divGlobal.className = "global";
 //Set row
@@ -565,5 +565,7 @@ output.appendChild(divGlobal);
 		}		
 		return {"ssc":ssc,"cust" : cust,"other":other}
 	}
-	
+
+//window.addEventListener('load', function(){alert("test")},false)
+
 </script>
