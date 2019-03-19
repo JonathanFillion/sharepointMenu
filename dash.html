@@ -1,4 +1,4 @@
-<script src="https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/Shared%20Documents/dev/librairies/jquery-3.3.1.min.js"></script>
+<script src=""></script>
 <!--Basic structure of the menu-->
 <div>
             <button class="collapsible" type="button" id="new-main" data-status="unlocked">New</button>
@@ -32,6 +32,24 @@
             <button class="inner-collapsible smaller" type="button" id="assessed-other" data-status="unlocked">Other</button>
                         <div class="internalcontent">
                                       <div id="wp-assessed-other"></div>
+                        </div>
+            </div>
+</div>
+<br />
+<div>
+            <button class="collapsible" type="button" id="being-assessed-main" data-status="unlocked">Being Assessed</button>
+            <div class="content" id="">
+                        <button class="inner-collapsible smaller" type="button" id="being-assessed-ssc" data-status="unlocked">SSC Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-being-assessed-ssc"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="being-assessed-cust" data-status="unlocked">Customer Led</button>
+                        <div class="internalcontent">
+                                      <div id="wp-being-assessed-cust"></div>
+                        </div>
+            <button class="inner-collapsible smaller" type="button" id="being-assessed-other" data-status="unlocked">Other</button>
+                        <div class="internalcontent">
+                                      <div id="wp-being-assessed-other"></div>
                         </div>
             </div>
 </div>
@@ -446,13 +464,14 @@ setActive("inner-collapsible", "inner-active");
 
 <script>
     $(document).ready(function() {
+	logAccessToList();
         getList(
         //Simple triage function, for all projects, put them in the good array
 	//Compare using localeCompare, if == 0 then they are equal.    
 	function(array) {
 	console.log(array)
 		array = clearNull(array)
-		var StatusConditions = ["pending approval to on-board", "pending approval to go live","pending approval to close","yellow","red","green", "closed", "on hold", "completed", "new", "assessed"];
+		var StatusConditions = ["pending approval to on-board", "pending approval to go live","pending approval to close","yellow","red","green", "closed", "on hold", "completed", "new", "assessed", "being assessed"];
 		var EscalationConditions = ["dg","director","manager"];
 		
 		var escalationDG = [];
@@ -469,7 +488,8 @@ setActive("inner-collapsible", "inner-active");
 		var completedArray = [];
 		var _newArray = [];
 		var assessedArray = [];
-		var arraysStatus = [pendingOnboard,pendingLive,pendingClose,yellowArray,redArray, greenArray, closedArray, onholdArray, completedArray, _newArray, assessedArray];
+		var beingAssessedArray = [];
+		var arraysStatus = [pendingOnboard,pendingLive,pendingClose,yellowArray,redArray, greenArray, closedArray, onholdArray, completedArray, _newArray, assessedArray, beingAssessedArray];
 		var arraysEscalation = [escalationDG, escalationDirector, escalationManager];
         
 		//For the whole SP list, find the wp you want
@@ -506,7 +526,7 @@ setActive("inner-collapsible", "inner-active");
 	var completed = splitLedType(completedArray);
 	var _new =splitLedType(_newArray);
 	var assessed = splitLedType(assessedArray);
-	
+	var beingAssessed = splitLedType(beingAssessedArray);
 	//var escalation = {edg : escalationDG , ed : escalationDirector, em : escalationManager};
 	
 	//Pending onboard
@@ -554,6 +574,11 @@ setActive("inner-collapsible", "inner-active");
 	generateHtml(assessed.ssc,"wp-assessed-ssc", "assessed-ssc");
 	generateHtml(assessed.cust,"wp-assessed-cust", "assessed-cust");
 	generateHtml(assessed.other,"wp-assessed-other", "assessed-other");
+	//Being Assessed
+	setTotalsAndLockIfEmpty(beingAssessed.len, "being-assessed-main");
+	generateHtml(beingAssessed.ssc,"wp-being-assessed-ssc", "being-assessed-ssc");
+	generateHtml(beingAssessed.cust,"wp-being-assessed-cust", "being-assessed-cust");
+	generateHtml(beingAssessed.other,"wp-being-assessed-other", "being-assessed-other");
 	//Completed
 	setTotalsAndLockIfEmpty(completed.len, "completed-main");
 	generateHtml(completed.ssc,"wp-completed-ssc", "completed-ssc");
@@ -771,5 +796,29 @@ setActive("inner-collapsible", "inner-active");
 		}		
 		return {ssc:Assc,cust: Acust,other:Aother, len: array.length}
 	}
+	
+	var logAccessToList = function() {
+					
+					var url = "https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/_api/Web/lists/getbytitle('logs')/items";
+					//var url = "https://synergi.ssc-spc.gc.ca/IS/SMO-OGS/SMTPS/_api/Web/lists/getbytitle('test')/items";
+					$.ajax({
+					url: url,
+					method: 'POST',
+					data: "{ '__metadata': { 'type': 'SP.Data.LogsListItem' }, 'Title': '"+document.getElementById("O365_MainLink_Me").innerText+"', data: 'full'}",
+					//data: "{ '__metadata': { 'type': 'SP.Data.LogsListItem' }, 'Title': 'blable', 'data' : '1234'}",
+					beforeSend: function(XMLHttpRequest) {
+						XMLHttpRequest.setRequestHeader('Accept', 'application/json; odata=verbose');
+						XMLHttpRequest.setRequestHeader("X-RequestDigest", $("#__REQUESTDIGEST").val());
+						XMLHttpRequest.setRequestHeader("Content-type", "application/json;odata=verbose");
+					},
+					success: function(resp) {
+						//console.log("request made");
+						//console.log(resp)
+					},
+					error: function (err) {
+						console.log(err);
+					}
+				})
+			}
 	
 </script>
